@@ -1,63 +1,176 @@
-<!-- templates/index.html -->
-
 <!DOCTYPE html>
 <html lang="en">
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>{{ resume.name }}'s Resume</title>
+    <title>Ali Nedaei Toosi - Resume</title>
     <style>
         body {
             font-family: Arial, sans-serif;
+            background-color: #f4f4f4;
             margin: 0;
             padding: 0;
             color: #333;
-            background: #f4f4f4;
-        }
-        header {
-            background: #333;
-            color: #fff;
-            padding: 20px;
-            text-align: center;
         }
         .container {
             width: 80%;
-            margin: auto;
+            margin: 20px auto;
             padding: 20px;
             background: #fff;
-            border-radius: 8px;
             box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+            border-radius: 8px;
+        }
+        header {
+            text-align: center;
+            margin-bottom: 30px;
+        }
+        header h1 {
+            margin: 0;
+            font-size: 2.5em;
+        }
+        header p {
+            font-size: 1.2em;
+            color: #666;
+        }
+        section {
+            margin-bottom: 40px;
         }
         h2 {
             color: #333;
+            border-bottom: 2px solid #333;
+            padding-bottom: 5px;
         }
-        .section {
-            margin-bottom: 20px;
+        ul {
+            list-style: none;
+            padding: 0;
+        }
+        li {
+            margin-bottom: 10px;
+        }
+        .date {
+            float: right;
+            font-weight: bold;
+            color: #555;
+        }
+        .contact-info, .skills ul, .education ul, .experience ul, .projects ul {
+            margin: 10px 0;
+        }
+        .contact-info p, .skills p, .education p, .experience p, .projects p {
+            margin: 5px 0;
+            font-size: 1em;
+            color: #666;
         }
     </style>
 </head>
 <body>
+
+<div class="container">
     <header>
-        <h1>{{ resume.name }}</h1>
-        <p>Web Developer</p>
+        <h1>Ali Nedaei Toosi</h1>
+        <p>Linux System Administrator & DevOps Engineer</p>
+        <p>Email: alinedaei7610@gmail.com | Phone: (+98) 9902612053 | Location: Tehran, Iran</p>
+        <p>LinkedIn: <a href="https://linkedin.com/in/Ali%20Nedaei%20Toosi" target="_blank">Ali Nedaei Toosi</a></p>
     </header>
 
-    <div class="container">
-        <div class="section">
-            <h2>About Me</h2>
-            <p>{{ resume.bio }}</p>
-        </div>
+    <section>
+        <h2>Profile</h2>
+        <p>A seasoned Linux System Administrator and DevOps Engineer with over 5 years of hands-on experience in designing, implementing, and maintaining scalable and secure infrastructure. Adept at leveraging automation tools to streamline operations, enhance system reliability, and optimize performance. Proficient in a wide range of technologies, including Docker, Jenkins, Ansible, and cloud services like Azure DevOps. Passionate about continuous integration and continuous delivery (CI/CD), and committed to fostering collaborative and agile environments.</p>
+    </section>
 
-        <div class="section">
-            <h2>Experience</h2>
-            <p>{{ resume.experience }}</p>
-        </div>
+    <section>
+        <h2>Skills</h2>
+        <ul class="skills">
+            <li><strong>Linux Administration:</strong> Expert in managing Linux systems (Ubuntu, CentOS), LPIC 1 & 2 certified, extensive experience in server configuration, maintenance, and troubleshooting.</li>
+            <li><strong>Virtualization:</strong> Skilled in VMware for creating and managing virtual environments.</li>
+            <li><strong>Networking:</strong> Strong foundation in networking principles and security, certified in Network+ and CCNA Security.</li>
+            <li><strong>DevOps Practices:</strong> Proficient with Jenkins for CI/CD pipelines, Docker for containerization, Ansible for automation, and Vagrant for environment management.</li>
+            <li><strong>Cloud Services:</strong> Experienced with Azure DevOps for managing cloud-based services and infrastructure.</li>
+            <li><strong>Web Hosting & Servers:</strong> Competent in managing Apache, Nginx, Plesk, and cPanel.</li>
+            <li><strong>Scripting & Automation:</strong> Skilled in Bash scripting and Python for automating routine tasks.</li>
+            <li><strong>Monitoring & Analytics:</strong> Proficient with Zabbix and Grafana to ensure system health and performance.</li>
+        </ul>
+    </section>
 
-        <div class="section">
-            <h2>Education</h2>
-            <p>{{ resume.education }}</p>
-        </div>
-    </div>
+    <section>
+        <h2>Professional Experience</h2>
+        <ul class="experience">
+            <li>
+                <h3>DevOps Engineer <span class="date">Nov 2023 - Present</span></h3>
+                <p><strong>Golestan Company, Tehran</strong></p>
+                <ul>
+                    <li>Designed and implemented CI/CD pipelines using Jenkins for seamless deployment of NodeJS applications.</li>
+                    <li>Upgraded Azure DevOps from 2019 to 2022, enhancing efficiency and reliability.</li>
+                    <li>Automated build and deployment processes for NodeJS and NestJS applications, reducing manual effort.</li>
+                    <li>Developed Ansible scripts for automated certificate renewal with Let's Encrypt.</li>
+                    <li>Managed hosting and monitoring services, maintaining high availability and performance.</li>
+                </ul>
+            </li>
+            <li>
+                <h3>Linux System Administrator <span class="date">Aug 2022 - Nov 2023</span></h3>
+                <p><strong>Golestan Company, Tehran</strong></p>
+                <ul>
+                    <li>Administered and optimized Elastic Search and Kibana environments.</li>
+                    <li>Automated system updates and package installations using Ansible and Bash scripts.</li>
+                    <li>Implemented CI/CD pipelines for ASP and NodeJS projects.</li>
+                    <li>Conducted vulnerability assessments and implemented security measures.</li>
+                </ul>
+            </li>
+            <li>
+                <h3>Web Hosting Specialist <span class="date">May 2021 - Aug 2022</span></h3>
+                <p><strong>Server Pars, Tehran</strong></p>
+                <ul>
+                    <li>Managed web hosting environments ensuring optimal performance.</li>
+                    <li>Developed and deployed Bash scripts for monitoring Nginx server status.</li>
+                </ul>
+            </li>
+            <li>
+                <h3>Monitoring Specialist <span class="date">Mar 2021 - Jul 2021</span></h3>
+                <p><strong>Digiton, Tehran</strong></p>
+                <ul>
+                    <li>Monitored system performance and resolved issues promptly.</li>
+                </ul>
+            </li>
+            <li>
+                <h3>Web Development Intern <span class="date">Apr 2020 - Oct 2020</span></h3>
+                <p><strong>Bizmesh Accelerator, Karaj</strong></p>
+                <ul>
+                    <li>Assisted in the development of web applications, gaining experience in web technologies.</li>
+                </ul>
+            </li>
+        </ul>
+    </section>
+
+    <section>
+        <h2>Education</h2>
+        <ul class="education">
+            <li>
+                <h3>Bachelor’s Degree in Information Technology Engineering (Web Programming) <span class="date">2017 - 2022</span></h3>
+                <p><strong>University of Applied Science and Technology, Tehran</strong></p>
+            </li>
+        </ul>
+    </section>
+
+    <section>
+        <h2>Certifications</h2>
+        <ul class="education">
+            <li>DevOps Engineer: Douran Academy, March 2022</li>
+            <li>Comprehensive Networking: Network+, CCNA, MCSA 2016, MTC - Everest Institute, November 2021</li>
+            <li>Linux Operating System: Everest Institute, December 2020</li>
+            <li>Python Programming: Everest Institute, August 2020</li>
+        </ul>
+    </section>
+
+    <section>
+        <h2>Languages</h2>
+        <p>English: Intermediate</p>
+    </section>
+
+    <section>
+        <h2>Additional Information</h2>
+        <p>Military Service Status: Exempt (Educational Exemption)</p>
+    </section>
+</div>
+
 </body>
 </html>
 
