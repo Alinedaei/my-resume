@@ -1,31 +1,11 @@
-from django.shortcuts import render, redirect
-from django.contrib.auth import authenticate, login
-from django.contrib.auth.decorators import login_required
-from django.contrib.auth.forms import AuthenticationForm
-from django.contrib import messages
+from django.contrib import admin
+from django.urls import path
+from resume import views
 
-def login_view(request):
-    if request.method == 'POST':
-        form = AuthenticationForm(request, data=request.POST)
-        if form.is_valid():
-            username = form.cleaned_data.get('username')
-            password = form.cleaned_data.get('password')
-            user = authenticate(username=username, password=password)
-            if user is not None:
-                login(request, user)
-                return redirect('dashboard')  # هدایت به داشبورد
-            else:
-                messages.error(request, "Invalid username or password.")
-        else:
-            messages.error(request, "Invalid username or password.")
-    else:
-        form = AuthenticationForm()
-    return render(request, 'login.html', {'form': form})
-
-@login_required
-def dashboard_view(request):
-    return render(request, 'dashboard.html')
-
-@login_required
-def resume_view(request):
-    return render(request, 'resume.html')
+urlpatterns = [
+    path('admin/', admin.site.urls),
+    path('login/', views.login_view, name='login'),
+    path('dashboard/', views.dashboard_view, name='dashboard'),
+    path('resume/', views.resume_view, name='resume'),
+    path('', views.login_view, name='home'),  # مسیر پیش‌فرض برای ریشه
+]
