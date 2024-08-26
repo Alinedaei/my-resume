@@ -12,7 +12,7 @@ def login_view(request):
             user = authenticate(request, username=username, password=password)
             if user is not None:
                 login(request, user)
-                return redirect('resume')
+                return redirect('dashboard')  # هدایت کاربر به داشبورد بعد از لاگین
     else:
         form = LoginForm()
     return render(request, 'login.html', {'form': form})
@@ -20,6 +20,10 @@ def login_view(request):
 @login_required
 def resume_view(request):
     return render(request, 'resume.html')
+
+@login_required
+def dashboard_view(request):
+    return render(request, 'dashboard.html')
+
 def index_view(request):
     return render(request, 'index.html')
-
