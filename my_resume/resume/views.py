@@ -1,9 +1,25 @@
-# resume/views.py
+from django.shortcuts import render, redirect
+from django.contrib.auth import authenticate, login
+from django.contrib.auth.decorators import login_required
+from .forms import LoginForm
 
-from django.shortcuts import render
-from .models import Resume
+def login_view(request):
+    if request.method == 'POST':
+        form = LoginForm(request, data=request.POST)
+        if form.is_valid():
+            username = form.cleaned_data.get('username')
+            password = form.cleaned_data.get('password')
+            user = authenticate(request, username=username, password=password)
+            if user is not None:
+                login(request, user)
+                return redirect('resume')
+    else:
+        form = LoginForm()
+    return render(request, 'login.html', {'form': form})
 
-def home(request):
-    resume = Resume.objects.first()  # فرض می‌کنیم فقط یک رزومه داریم
-    return render(request, 'index.html', {'resume': resume})
+@login_required
+def resume_view(request):
+    return render(request, 'resume.html')
+def index_view(request):
+    return render(request, 'index.html')
 
