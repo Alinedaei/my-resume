@@ -1,0 +1,37 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Dashboard</title>
+    <style>
+        body { font-family: Arial, sans-serif; background-color: #f4f4f4; padding: 20px; }
+        .container { max-width: 800px; margin: auto; background: white; padding: 20px; border-radius: 10px; box-shadow: 0 0 10px rgba(0, 0, 0, 0.1); }
+        h1 { text-align: center; margin-bottom: 20px; }
+        .nav { margin-bottom: 20px; display: flex; justify-content: space-around; }
+        .nav a { text-decoration: none; color: #007BFF; padding: 10px 20px; border-radius: 5px; background-color: #f0f0f0; }
+        .nav a:hover { background-color: #007BFF; color: white; }
+        .section { margin-bottom: 30px; }
+        .section h2 { margin-bottom: 10px; }
+    </style>
+</head>
+<body>
+    <div class="container">
+        <h1>Welcome to Your Dashboard</h1>
+        <div class="nav">
+            <a href="#biography">Biography</a>
+            <a href="#skills">Skills</a>
+            <a href="#experience">Experience</a>
+        </div>
+        <div class="section" id="biography">
+            {% include 'sections/biography.html' %}
+        </div>
+        <div class="section" id="skills">
+            {% include 'sections/skills.html' %}
+        </div>
+        <div class="section" id="experience">
+            {% include 'sections/experience.html' %}
+        </div>
+    </div>
+</body>
+</html>
